@@ -1,0 +1,443 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page 1</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  ></script>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/page_1/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/prototypePre.js"></script>
+    <script src="data/document.js"></script>
+<!--    <script type= "text/javascript" src="sender.js"></script>-->
+    <script src="resources/scripts/prototypePost.js"></script>
+    <script src="files/page_1/data.js"></script>
+      
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+      <script>
+      
+
+
+function getData(){
+                console.log("COol")
+                var xhr = new XMLHttpRequest();
+xhr.open("POST", 'http://localhost:5000/creator', true);
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.send(JSON.stringify({
+   // document.getElementsByName("ValBox")[0].value
+    name:$('#u17_input').value,
+    vega : 0,
+    pro : 0,
+    carb  : 0,
+    fat : 0,
+    alc : 0,
+    bal : 0,
+    Tre : 0,
+    Pea : 0,
+    lowCal : 1,
+    highCal : 5500,
+    maxItems : 25,
+    recipeNumber : 0
+}));
+
+xhr.onreadystatechange = function() {
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+        // alert(xhr.responseText);
+        //$("#done").replaceWith( xhr.responseText );
+    }
+}
+
+
+            }
+    
+    
+    
+//}
+      </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (Image) -->
+      <div id="u11" class="ax_default image">
+        <img id="u11_img" class="img " src="images/page_1/u11.png"/>
+      </div>
+
+      <!-- Title (Rectangle) -->
+      <div id="u12" class="ax_default box_3" data-label="Title">
+        <div id="u12_div" class=""></div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u13" class="ax_default image">
+        <img id="u13_img" class="img " src="images/home/u10.png"/>
+      </div>
+
+      <!-- Logo (Rectangle) -->
+      <div id="u14" class="ax_default test" data-label="Logo">
+        <img id="u14_img" class="img " src="images/home/logo_u1.png"/>
+        <div id="u14_text" class="text ">
+          <p><span>MEAL</span><span> </span></p>
+        </div>
+      </div>
+
+      <!-- Logo (Rectangle) [footnote] -->
+      <div id="u14_ann" class="annotation"></div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u15" class="ax_default box_1">
+        <div id="u15_div" class=""></div>
+      </div>
+
+        <button type="button" id="u16_div" onclick="getData()" >
+        <div id="u16_text" class="text ">
+          <p><span >&nbsp;ROGER-DODGER!</span></p>
+        </div>
+        </button>
+      
+
+      <!-- Search Bar (Text Field) -->
+      <div id="u17" class="ax_default text_field" data-label="Search Bar">
+        <input id="u17_input" type="text" value="" maxlength="200"/>
+      </div>
+
+      <!-- Protein (Dynamic Panel) -->
+      <div id="u18" class="ax_default" data-label="Protein">
+        <div id="u18_state0" class="panel_state" data-label="State1" style="">
+          <div id="u18_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u19" class="ax_default checkbox">
+              <label for="u19_input" style="position: absolute; left: 0px;">
+                <div id="u19_text" class="text ">
+                  <p><span>High Protein</span></p>
+                </div>
+              </label>
+              <input id="u19_input" type="checkbox" value="checkbox"/>
+            </div>
+          </div>
+        </div>
+        <div id="u18_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+          <div id="u18_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u20" class="ax_default checkbox">
+              <label for="u20_input" style="position: absolute; left: 0px;">
+                <div id="u20_text" class="text ">
+                  <p><span>High Protein</span></p>
+                </div>
+              </label>
+              <input id="u20_input" type="checkbox" value="checkbox" checked/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carb (Dynamic Panel) -->
+      <div id="u21" class="ax_default" data-label="Carb">
+        <div id="u21_state0" class="panel_state" data-label="State1" style="">
+          <div id="u21_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u22" class="ax_default checkbox">
+              <label for="u22_input" style="position: absolute; left: 0px;">
+                <div id="u22_text" class="text ">
+                  <p><span>Low Carb</span></p>
+                </div>
+              </label>
+              <input id="u22_input" type="checkbox" value="checkbox"/>
+            </div>
+          </div>
+        </div>
+        <div id="u21_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+          <div id="u21_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u23" class="ax_default checkbox">
+              <label for="u23_input" style="position: absolute; left: 0px;">
+                <div id="u23_text" class="text ">
+                  <p><span>Low Carb</span></p>
+                </div>
+              </label>
+              <input id="u23_input" type="checkbox" value="checkbox" checked/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Low Fat (Dynamic Panel) -->
+      <div id="u24" class="ax_default" data-label="Low Fat">
+        <div id="u24_state0" class="panel_state" data-label="State1" style="">
+          <div id="u24_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u25" class="ax_default checkbox">
+              <label for="u25_input" style="position: absolute; left: 0px;">
+                <div id="u25_text" class="text ">
+                  <p><span>Low Fat</span></p>
+                </div>
+              </label>
+              <input id="u25_input" type="checkbox" value="checkbox"/>
+            </div>
+          </div>
+        </div>
+        <div id="u24_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+          <div id="u24_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u26" class="ax_default checkbox">
+              <label for="u26_input" style="position: absolute; left: 0px;">
+                <div id="u26_text" class="text ">
+                  <p><span>Low Carb</span></p>
+                </div>
+              </label>
+              <input id="u26_input" type="checkbox" value="checkbox" checked/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alcohol (Dynamic Panel) -->
+      <div id="u27" class="ax_default" data-label="Alcohol">
+        <div id="u27_state0" class="panel_state" data-label="State1" style="">
+          <div id="u27_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u28" class="ax_default checkbox">
+              <label for="u28_input" style="position: absolute; left: 0px;">
+                <div id="u28_text" class="text ">
+                  <p><span>Alcohol Free</span></p>
+                </div>
+              </label>
+              <input id="u28_input" type="checkbox" value="checkbox"/>
+            </div>
+          </div>
+        </div>
+        <div id="u27_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+          <div id="u27_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u29" class="ax_default checkbox">
+              <label for="u29_input" style="position: absolute; left: 0px;">
+                <div id="u29_text" class="text ">
+                  <p><span>Alcohol Free</span></p>
+                </div>
+              </label>
+              <input id="u29_input" type="checkbox" value="checkbox" checked/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vegan (Dynamic Panel) -->
+      <div id="u30" class="ax_default" data-label="Vegan">
+        <div id="u30_state0" class="panel_state" data-label="State1" style="">
+          <div id="u30_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u31" class="ax_default checkbox">
+              <label for="u31_input" style="position: absolute; left: 0px;">
+                <div id="u31_text" class="text ">
+                  <p><span>Vegan</span></p>
+                </div>
+              </label>
+              <input id="u31_input" type="checkbox" value="checkbox"/>
+            </div>
+          </div>
+        </div>
+        <div id="u30_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+          <div id="u30_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u32" class="ax_default checkbox">
+              <label for="u32_input" style="position: absolute; left: 0px;">
+                <div id="u32_text" class="text ">
+                  <p><span>Vegan</span></p>
+                </div>
+              </label>
+              <input id="u32_input" type="checkbox" value="checkbox" checked/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vegetarian (Dynamic Panel) -->
+      <div id="u33" class="ax_default" data-label="Vegetarian">
+        <div id="u33_state0" class="panel_state" data-label="State1" style="">
+          <div id="u33_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u34" class="ax_default checkbox">
+              <label for="u34_input" style="position: absolute; left: 0px;">
+                <div id="u34_text" class="text ">
+                  <p><span>Vegetarian</span></p>
+                </div>
+              </label>
+              <input id="u34_input" type="checkbox" value="checkbox"/>
+            </div>
+          </div>
+        </div>
+        <div id="u33_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+          <div id="u33_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u35" class="ax_default checkbox">
+              <label for="u35_input" style="position: absolute; left: 0px;">
+                <div id="u35_text" class="text ">
+                  <p><span>Vegetarian</span></p>
+                </div>
+              </label>
+              <input id="u35_input" type="checkbox" value="checkbox" checked/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Balanced (Dynamic Panel) -->
+      <div id="u36" class="ax_default" data-label="Balanced">
+        <div id="u36_state0" class="panel_state" data-label="State1" style="">
+          <div id="u36_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u37" class="ax_default checkbox">
+              <label for="u37_input" style="position: absolute; left: 0px;">
+                <div id="u37_text" class="text ">
+                  <p><span>Balanced</span></p>
+                </div>
+              </label>
+              <input id="u37_input" type="checkbox" value="checkbox"/>
+            </div>
+          </div>
+        </div>
+        <div id="u36_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+          <div id="u36_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u38" class="ax_default checkbox">
+              <label for="u38_input" style="position: absolute; left: 0px;">
+                <div id="u38_text" class="text ">
+                  <p><span>Balanced</span></p>
+                </div>
+              </label>
+              <input id="u38_input" type="checkbox" value="checkbox" checked/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label1 (Rectangle) -->
+      <div id="u39" class="ax_default label" data-label="Label1">
+        <div id="u39_div" class=""></div>
+        <div id="u39_text" class="text ">
+          <p><span>Allergies</span></p>
+        </div>
+      </div>
+
+      <!-- Tree Nuts (Dynamic Panel) -->
+      <div id="u40" class="ax_default" data-label="Tree Nuts">
+        <div id="u40_state0" class="panel_state" data-label="State1" style="">
+          <div id="u40_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u41" class="ax_default checkbox">
+              <label for="u41_input" style="position: absolute; left: 0px;">
+                <div id="u41_text" class="text ">
+                  <p><span>Tree Nuts</span></p>
+                </div>
+              </label>
+              <input id="u41_input" type="checkbox" value="checkbox"/>
+            </div>
+          </div>
+        </div>
+        <div id="u40_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+          <div id="u40_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u42" class="ax_default checkbox">
+              <label for="u42_input" style="position: absolute; left: 0px;">
+                <div id="u42_text" class="text ">
+                  <p><span>Tree Nuts</span></p>
+                </div>
+              </label>
+              <input id="u42_input" type="checkbox" value="checkbox" checked/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peanuts (Dynamic Panel) -->
+      <div id="u43" class="ax_default" data-label="Peanuts">
+        <div id="u43_state0" class="panel_state" data-label="State1" style="">
+          <div id="u43_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u44" class="ax_default checkbox">
+              <label for="u44_input" style="position: absolute; left: 0px;">
+                <div id="u44_text" class="text ">
+                  <p><span>Peanuts</span></p>
+                </div>
+              </label>
+              <input id="u44_input" type="checkbox" value="checkbox"/>
+            </div>
+          </div>
+        </div>
+        <div id="u43_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+          <div id="u43_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Checkbox) -->
+            <div id="u45" class="ax_default checkbox">
+              <label for="u45_input" style="position: absolute; left: 0px;">
+                <div id="u45_text" class="text ">
+                  <p><span>Peanuts</span></p>
+                </div>
+              </label>
+              <input id="u45_input" type="checkbox" value="checkbox" checked/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CalMaxInput (Text Field) -->
+      <div id="u46" class="ax_default text_field" data-label="CalMaxInput">
+        <input id="u46_input" type="text" value="" maxlength="4"/>
+      </div>
+
+      <!-- CalMinInput (Text Field) -->
+      <div id="u47" class="ax_default text_field" data-label="CalMinInput">
+        <input id="u47_input" type="text" value="" maxlength="4"/>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u48" class="ax_default label">
+        <div id="u48_div" class=""></div>
+        <div id="u48_text" class="text ">
+          <p><span>to</span></p>
+        </div>
+      </div>
+
+      <!-- Ingredient#Input (Text Field) -->
+      <div id="u49" class="ax_default text_field" data-label="Ingredient#Input">
+        <input id="u49_input" type="text" value="" maxlength="3"/>
+      </div>
+
+      <!-- ValBox (Rectangle) -->
+      <div id="u50" class="ax_default paragraph" data-label="ValBox">
+        <div id="u50_div" class=""></div>
+        <div id="u50_text" class="text ">
+          <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

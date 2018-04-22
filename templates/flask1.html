@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Example Template!</title>
+</head>
+<body>
+
+<h1>{{label}}</h1>
+
+<br/>
+
+
+{% for ing in ingredients %}
+{{ing}}<br/>
+{% endfor %}
+
+    <p>link to procedure <a href={{procedure}}>{{procedure}}</a></p>
+
+<img src={{imgurl}} />
+
+<h7>will be invisible to user with css: {{commandparts}}</h7>
+    <h6>next recipe preview {{nextlabel}}</h6>
+    <button>
+    connect to next recipe</button>
+</body>
+</html>
