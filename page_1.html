@@ -58,7 +58,7 @@ xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
         
         //window.open(xhr.response);
-        document.innerHTML = xhr.response;
+        document.write(xhr.response);
         // alert(xhr.responseText);
         //$("#done").replaceWith( xhr.responseText );
     }
