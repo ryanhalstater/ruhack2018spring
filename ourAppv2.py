@@ -34,6 +34,7 @@ def creator(): #this part gets data ready for insertion
     maxItems = variables['maxItems']
     recipeNumber = variables['recipeNumber']
     
+    
     commandparts = [name,vege,vega,pro,carb,fat,alc,bal,Tre,Pea,lowCal,highCal,maxItems,recipeNumber]
     reqString = "https://api.edamam.com/search?q="+name+"&app_id="+config.APPID+"&app_key="+config.APPKEY+"&calories="+str(lowCal)+"-"+str(highCal)+"&ingr="+str(maxItems)
     # LOT OF IF STATEMENTS
@@ -56,8 +57,13 @@ def creator(): #this part gets data ready for insertion
     if (Pea==1):
         reqString = reqString + "&health="+"peanut-free"
     #end of  long ifs
-    print(reqString)
-    a = requests.get(reqString)
+    #error catching
+    try:
+        a = requests.get(reqString)
+    except requests.exceptions.RequestException as e:  # This is the correct syntax
+        print(e)
+        return render_template('netErr.html')
+
     dat = a.json()
     procedure=""
     label=""
@@ -65,12 +71,19 @@ def creator(): #this part gets data ready for insertion
     imgurl=""
     nextlabel="final recipe reached"
     #commandparts
-    print(['hits'])        
+    #print(len(dat['hits']))
+    
+    #catches if there are no results
+    if (len(dat['hits']) == 0):
+        if(name=="Enter Query"):
+            name="nothing"
+        return render_template('notFound.html', item=name)
+    
+            
     procedure = dat['hits'][int(recipeNumber)]['recipe']['url']
     label = dat['hits'][int(recipeNumber)]['recipe']['label']#: addefd t look good
     imgurl = dat['hits'][int(recipeNumber)]['recipe']['image']
-    print(len(dat['hits']))
-    print(recipeNumber)
+
     if (len(dat['hits'])-1> recipeNumber+1): #if next label is valid
         nextlabel = dat['hits'][int(recipeNumber)+1]['recipe']['label']
     else:
@@ -79,9 +92,8 @@ def creator(): #this part gets data ready for insertion
     for j in dat['hits'][int(recipeNumber)]['recipe']['ingredients']:
         ingredients.append(j['text'])
 
-    return render_template('flask1.html', ingredients = ingredients, imgurl=imgurl, procedure=procedure, commandparts=commandparts, label=label, nextlabel = nextlabel)
-    
-    
+    return render_template('flask1.html', ingredients = ingredients, imgurl=imgurl, procedure=procedure, label=label, nextRec = nextlabel, name=name,vege=vege,vega=vega,pro=pro,fat=fat,alc=alc,bal=bal,tre=Tre,pea=Pea,loC=lowCal,hiC=highCal,maxI=maxItems,rec=recipeNumber)
+
     
 
     
